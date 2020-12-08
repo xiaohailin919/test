@@ -1,54 +1,21 @@
 {
-	"id": "eb88a480-919c-4f21-905b-eb3a674d51de",
-	"name": "placement",
-	"description": null,
-	"auth": null,
-	"events": null,
-	"variables": [],
-	"order": [
-		"f5ad2626-3ba4-45f2-988f-8519fe723984"
-	],
-	"folders_order": [],
-	"protocolProfileBehavior": {},
-	"folders": [],
-	"requests": [
+	"info": {
+		"_postman_id": "eb88a480-919c-4f21-905b-eb3a674d51de",
+		"name": "placement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "f5ad2626-3ba4-45f2-988f-8519fe723984",
 			"name": "open api",
-			"url": "http://test.aa.toponad.com/v1/open/placement?",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"name": "Content-Type",
-					"value": "application/json",
-					"type": "text"
-				}
-			],
-			"method": "POST",
-			"pathVariableData": [],
-			"queryParams": [
-				{
-					"key": "",
-					"value": null,
-					"equals": false,
-					"description": "",
-					"enabled": true
-				}
-			],
-			"auth": null,
-			"events": [
+			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "d3353d9b-e3ff-43fe-803f-34cf62a616c7",
+						"id": "5cbc0cdb-37e3-476b-bbe9-d449b9ee69db",
 						"exec": [
-							"var sdk_app_id = 'a5f2d081f67d5e'",
+							"var sdk_app_id = 'a5f86dd2553f15'",
 							"var sdk_app_key = '7c5bee9f388ccb7ea9b486354bfa30d8'",
-							"var sdk_app_pl = 'b5f311e34be097'",
+							"var sdk_app_pl = 'b5f9ffaf917544'",
 							"",
 							"// var sdk_app_id = data.sdk_app_id",
 							"// var sdk_app_key = data.sdk_app_key",
@@ -60,13 +27,13 @@
 							"  \"app_id\": \"`+sdk_app_id+`\",",
 							"  \"app_vc\": \"6.5.4\",",
 							"  \"app_vn\": \"6.5.4\",",
-							"  \"brand\": \"\",",
+							"  \"brand\": \"aaaaapple\",",
 							"  \"gp_ver\": \"13.8.16-all [0] [PR] 235060107\",",
 							"  \"language\": \"zh\",",
 							"  \"mcc\": \"\",",
 							"  \"mnc\": \"\",",
 							"  \"model\": \"\",",
-							"  \"network_type\": \"-2\",",
+							"  \"network_type\": \"-4444444\",",
 							"  \"nw_ver\": {",
 							"    \"adcolony\": \"\", ",
 							"    \"applovin\": \"9.1.3\", ",
@@ -90,19 +57,21 @@
 							"  \"os_vn\": \"9.0.1\",",
 							"  \"package_name\":\"com.superapp.filemanager\",",
 							"  \"pl_id\": \"`+sdk_app_pl+`\",",
-							"  \"platform\": \"2\",",
+							"  \"platform\": \"1\",",
 							"  \"ps_id\": \"\",",
 							"  \"screen\": \"1080*1920\",",
-							"  \"sdk_ver\": \"UA_5.6.8\",",
+							"  \"sdk_ver\": \"UA_5.7.5\",",
 							"  \"session_id\": \"\",",
 							"  \"system\": 1,",
 							"  \"timezone\": \"GMT+08:00\",",
 							"  \"upid\":\"xx\",",
-							"  \"channel\":\"\",",
-							"  \"sub_channel\":\"\",",
+							"  \"channel\":\"qqqqqq\",",
+							"  \"sub_channel\":\"QQQ\",",
 							"  \"ua\":\"ew+ewe=ewe/ggfgfg\",",
-							"  \"custom\":{\"cohort_channel\":\"organic\",\"JPID\":\"30890c9d8b03f47382b5b05e7121884d\",\"aa\":\"bbb\",\"bb\":\"ccc\"},",
-							"  \"sy_id\":\"\"",
+							"  \"first_init_time\":1599721246000,",
+							"  \"custom\":{\"age\":\"45岁以上\"},",
+							"  \"sy_id\":\"\",",
+							"  \"cs_cl\":\"1\"",
 							"}`",
 							"// ",
 							"",
@@ -111,7 +80,8 @@
 							"  \"device_id\":\"PPLL23\",",
 							"  \"idfa\":\"\",",
 							"  \"idfv\":\"ios11111111\",",
-							"  \"gaid\": \"000-000\"",
+							"  \"gaid\": \"000-000\",",
+							"  \"oaid\":\"\"",
 							"",
 							"}`",
 							"",
@@ -156,7 +126,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "36ed26e1-0242-4455-a48e-6788ef467806",
+						"id": "a3e277af-5557-40bb-9327-b1c2b336ea46",
 						"exec": [
 							"function decryption(data)",
 							"{",
@@ -194,10 +164,44 @@
 					}
 				}
 			],
-			"folder": null,
-			"rawModeData": "{\r\n    \"p\": \"{{p1}}\",\r\n    \"p2\": \"{{p2}}\",\r\n    \"sign\": \"{{sign}}\",\r\n    \"api_ver\":\"1.0\"\r\n}",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"p\": \"{{p1}}\",\r\n    \"p2\": \"{{p2}}\",\r\n    \"sign\": \"{{sign}}\",\r\n    \"api_ver\":\"1.0\"\r\n}"
+				},
+				"url": {
+					"raw": "http://test.aa.toponad.com/v1/open/placement?",
+					"protocol": "http",
+					"host": [
+						"test",
+						"aa",
+						"toponad",
+						"com"
+					],
+					"path": [
+						"v1",
+						"open",
+						"placement"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
