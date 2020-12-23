@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="测试计划" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">*/*</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Accept-Encoding</stringProp>
+              <stringProp name="Header.value">gzip, deflate, br</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Connection</stringProp>
+              <stringProp name="Header.value">keep-alive</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP请求" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;limit&quot;:20,&quot;offset&quot;:0,&quot;end_time&quot;:20201208,&quot;start_time&quot;:20201208,&quot;timezone&quot;:108,&quot;format&quot;:-1,&quot;platform&quot;:0,&quot;is_cn_sdk&quot;:-1,&quot;nw_firm_id&quot;:0,&quot;group_by&quot;:[&quot;date_time&quot;,&quot;app_id&quot;],&quot;order_by&quot;:[{&quot;date_time&quot;:&quot;desc&quot;},{&quot;api_revenue&quot;:&quot;desc&quot;},{&quot;sdk_loads&quot;:&quot;desc&quot;},{&quot;sdk_impression&quot;:&quot;desc&quot;}],&quot;geo_short&quot;:[&quot;AD&quot;,&quot;AE&quot;,&quot;AF&quot;,&quot;AG&quot;,&quot;AI&quot;,&quot;AL&quot;,&quot;AM&quot;,&quot;AN&quot;,&quot;AO&quot;,&quot;AP&quot;,&quot;AQ&quot;,&quot;AR&quot;,&quot;AS&quot;,&quot;AT&quot;,&quot;AU&quot;,&quot;AW&quot;,&quot;AX&quot;,&quot;AZ&quot;,&quot;BA&quot;,&quot;BB&quot;,&quot;BD&quot;,&quot;BE&quot;,&quot;BF&quot;,&quot;BG&quot;,&quot;BH&quot;,&quot;BI&quot;,&quot;BJ&quot;,&quot;BL&quot;,&quot;BM&quot;,&quot;BN&quot;,&quot;BO&quot;,&quot;BQ&quot;,&quot;BR&quot;,&quot;BS&quot;,&quot;BT&quot;,&quot;BV&quot;,&quot;BW&quot;,&quot;BY&quot;,&quot;BZ&quot;,&quot;CA&quot;,&quot;CC&quot;,&quot;CD&quot;,&quot;CF&quot;,&quot;CG&quot;,&quot;CH&quot;,&quot;CI&quot;,&quot;CK&quot;,&quot;CL&quot;,&quot;CM&quot;,&quot;CO&quot;,&quot;CR&quot;,&quot;CU&quot;,&quot;CV&quot;,&quot;CW&quot;,&quot;CX&quot;,&quot;CY&quot;,&quot;CZ&quot;,&quot;DE&quot;,&quot;DJ&quot;,&quot;DK&quot;,&quot;DM&quot;,&quot;DO&quot;,&quot;DZ&quot;,&quot;EC&quot;,&quot;EE&quot;,&quot;EG&quot;,&quot;EH&quot;,&quot;ER&quot;,&quot;ES&quot;,&quot;ET&quot;,&quot;EU&quot;,&quot;FI&quot;,&quot;FJ&quot;,&quot;FK&quot;,&quot;FM&quot;,&quot;FO&quot;,&quot;FR&quot;,&quot;GA&quot;,&quot;GB&quot;,&quot;GD&quot;,&quot;GE&quot;,&quot;GF&quot;,&quot;GG&quot;,&quot;GH&quot;,&quot;GI&quot;,&quot;GL&quot;,&quot;GM&quot;,&quot;GN&quot;,&quot;GP&quot;,&quot;GQ&quot;,&quot;GR&quot;,&quot;GS&quot;,&quot;GT&quot;,&quot;GU&quot;,&quot;GW&quot;,&quot;GY&quot;,&quot;HK&quot;,&quot;HM&quot;,&quot;HN&quot;,&quot;HR&quot;,&quot;HT&quot;,&quot;HU&quot;,&quot;ID&quot;,&quot;IE&quot;,&quot;IL&quot;,&quot;IM&quot;,&quot;IN&quot;,&quot;IO&quot;,&quot;IQ&quot;,&quot;IR&quot;,&quot;IS&quot;,&quot;IT&quot;,&quot;JE&quot;,&quot;JM&quot;,&quot;JO&quot;,&quot;JP&quot;,&quot;KE&quot;,&quot;KG&quot;,&quot;KH&quot;,&quot;KI&quot;,&quot;KM&quot;,&quot;KN&quot;,&quot;KP&quot;,&quot;KR&quot;,&quot;KW&quot;,&quot;KY&quot;,&quot;KZ&quot;,&quot;LA&quot;,&quot;LB&quot;,&quot;LC&quot;,&quot;LI&quot;,&quot;LK&quot;,&quot;LR&quot;,&quot;LS&quot;,&quot;LT&quot;,&quot;LU&quot;,&quot;LV&quot;,&quot;LY&quot;,&quot;MA&quot;,&quot;MC&quot;,&quot;MD&quot;,&quot;ME&quot;,&quot;MF&quot;,&quot;MG&quot;,&quot;MH&quot;,&quot;MK&quot;,&quot;ML&quot;,&quot;MM&quot;,&quot;MN&quot;,&quot;MO&quot;,&quot;MP&quot;,&quot;MQ&quot;,&quot;MR&quot;,&quot;MS&quot;,&quot;MT&quot;,&quot;MU&quot;,&quot;MV&quot;,&quot;MW&quot;,&quot;MX&quot;,&quot;MY&quot;,&quot;MZ&quot;,&quot;NA&quot;,&quot;NC&quot;,&quot;NE&quot;,&quot;NF&quot;,&quot;NG&quot;,&quot;NI&quot;,&quot;NK&quot;,&quot;NL&quot;,&quot;NO&quot;,&quot;NP&quot;,&quot;NR&quot;,&quot;NU&quot;,&quot;NZ&quot;,&quot;OM&quot;,&quot;OTH&quot;,&quot;PA&quot;,&quot;PE&quot;,&quot;PF&quot;,&quot;PG&quot;,&quot;PH&quot;,&quot;PK&quot;,&quot;PL&quot;,&quot;PM&quot;,&quot;PN&quot;,&quot;PR&quot;,&quot;PS&quot;,&quot;PT&quot;,&quot;PW&quot;,&quot;PY&quot;,&quot;QA&quot;,&quot;RE&quot;,&quot;RO&quot;,&quot;RS&quot;,&quot;RU&quot;,&quot;RW&quot;,&quot;SA&quot;,&quot;SB&quot;,&quot;SC&quot;,&quot;SD&quot;,&quot;SE&quot;,&quot;SG&quot;,&quot;SH&quot;,&quot;SI&quot;,&quot;SJ&quot;,&quot;SK&quot;,&quot;SL&quot;,&quot;SM&quot;,&quot;SN&quot;,&quot;SO&quot;,&quot;SR&quot;,&quot;SS&quot;,&quot;ST&quot;,&quot;SV&quot;,&quot;SX&quot;,&quot;SY&quot;,&quot;SZ&quot;,&quot;TC&quot;,&quot;TD&quot;,&quot;TF&quot;,&quot;TG&quot;,&quot;TH&quot;,&quot;TJ&quot;,&quot;TK&quot;,&quot;TL&quot;,&quot;TM&quot;,&quot;TN&quot;,&quot;TO&quot;,&quot;TR&quot;,&quot;TT&quot;,&quot;TV&quot;,&quot;TW&quot;,&quot;TZ&quot;,&quot;UA&quot;,&quot;UG&quot;,&quot;UK&quot;,&quot;UM&quot;,&quot;US&quot;,&quot;UY&quot;,&quot;UZ&quot;,&quot;VA&quot;,&quot;VC&quot;,&quot;VE&quot;,&quot;VG&quot;,&quot;VI&quot;,&quot;VN&quot;,&quot;VU&quot;,&quot;WF&quot;,&quot;WS&quot;,&quot;YE&quot;,&quot;YT&quot;,&quot;ZA&quot;,&quot;ZM&quot;,&quot;ZW&quot;],&quot;region&quot;:2,&quot;publisher_id_list&quot;:[2999]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">http://3.218.14.157:8075/api/v2/bi/search/admin_report_new</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
